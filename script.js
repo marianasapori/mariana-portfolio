@@ -101,6 +101,87 @@ typeWriter(heroGreeting, greetingText, 60, () => {
   cycleTagline();
 });
 
+// ---- Paper Plane Timeline Animation ----
+document.querySelectorAll('.timeline[data-vine]').forEach(timeline => {
+  const wrap = timeline.querySelector('.timeline-plane-wrap');
+  if (!wrap) return;
+
+  // Create trail line
+  const trail = document.createElement('div');
+  trail.classList.add('timeline-trail');
+  wrap.appendChild(trail);
+
+  // Create plane (✈ emoji pointing down)
+  const plane = document.createElement('div');
+  plane.classList.add('timeline-plane');
+  plane.textContent = '✈';
+  wrap.appendChild(plane);
+
+  const items = timeline.querySelectorAll('.timeline-item');
+
+  let ticking = false;
+  function updatePlane() {
+    const rect = timeline.getBoundingClientRect();
+    const windowH = window.innerHeight;
+    const start = rect.top - windowH * 0.3;
+    const end = rect.bottom - windowH * 0.2;
+    const progress = Math.max(0, Math.min(1, -start / (end - start)));
+
+    const h = timeline.offsetHeight;
+    const planeY = progress * h;
+
+    // Grow trail to plane position
+    trail.style.height = planeY + 'px';
+
+    // Position plane at end of trail
+    plane.style.top = (planeY - 10) + 'px';
+
+    // Show plane when scrolling through, fade when done
+    if (progress > 0 && progress < 1) {
+      plane.classList.add('visible');
+      plane.classList.remove('faded');
+    } else if (progress >= 1) {
+      plane.classList.remove('visible');
+      plane.classList.add('faded');
+    } else {
+      plane.classList.remove('visible', 'faded');
+    }
+
+    // Check if plane is near a dot — activate that card
+    let nearDot = false;
+    items.forEach(item => {
+      const dot = item.querySelector('.timeline-dot');
+      if (!dot) return;
+      const dotTop = item.offsetTop + dot.offsetTop + 7; // center of dot
+      const distance = Math.abs(planeY - dotTop);
+
+      if (distance < 30) {
+        item.classList.add('plane-active');
+        nearDot = true;
+      } else {
+        item.classList.remove('plane-active');
+      }
+    });
+
+    // Plane scales up when at a dot
+    if (nearDot) {
+      plane.classList.add('at-dot');
+    } else {
+      plane.classList.remove('at-dot');
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updatePlane);
+      ticking = true;
+    }
+  }, { passive: true });
+  updatePlane();
+});
+
 // ---- Scroll Reveal (IntersectionObserver) ----
 const revealElements = document.querySelectorAll('.scroll-reveal');
 const skillTags = document.querySelectorAll('.skill-tag');

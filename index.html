@@ -17,6 +17,7 @@
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -31,20 +32,23 @@
   <!-- Hero / Landing -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <p class="hero-greeting">Hi, my name is</p>
-      <h1 class="hero-name">Mariana Neri Sapori</h1>
-      <p class="hero-tagline">IT Student</p>
-      <p class="hero-intro">
-        Hi, my name is Mariana. I'm an Information Technology student at Florida
-        State University who is passionate about building web projects and digital
-        solutions. I enjoy turning ideas into functional prototypes, collaborating
-        with teams, and experimenting with emerging technologies including
-        AI-driven tools, such as Claude Code (my personal favorite at the moment!)
-        to build interactive websites. Every project is an opportunity to combine
-        design, code, and creativity to solve real problems and make technology
-        more engaging.
-      </p>
-      <a href="#projects" class="btn">View My Work</a>
+      <div class="hero-text">
+        <p class="hero-greeting">Hi, my name is</p>
+        <h1 class="hero-name">Mariana Neri Sapori</h1>
+        <p class="hero-tagline">IT Student</p>
+        <p class="hero-intro">
+          Hi, my name is Mariana. I'm an Information Technology student at Florida
+          State University who is passionate about building web projects and digital
+          solutions. I enjoy turning ideas into functional prototypes, collaborating
+          with teams, and experimenting with emerging technologies including
+          AI-driven tools, such as Claude Code (my personal favorite at the moment!)
+          to build interactive websites. Every project is an opportunity to combine
+          design, code, and creativity to solve real problems and make technology
+          more engaging.
+        </p>
+        <a href="#projects" class="btn">View My Work</a>
+      </div>
+      <img src="IMG_6353.jpeg" alt="Mariana Neri Sapori" class="hero-photo">
     </div>
   </section>
 
@@ -76,6 +80,96 @@
     </div>
   </section>
 
+  <!-- Experience -->
+  <section id="experience" class="section experience">
+    <div class="container">
+      <h2 class="section-title scroll-reveal">Experience</h2>
+
+      <!-- Employment -->
+      <h3 class="timeline-heading scroll-reveal">Employment</h3>
+      <div class="timeline" data-vine>
+        <div class="timeline-plane-wrap"></div>
+
+        <div class="timeline-item left scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2026 – Present</span>
+            <h4>Social Media Marketing Lead</h4>
+            <p>Florida State University, Tallahassee, FL</p>
+            <p>Leading social media strategy for three university-affiliated Instagram accounts as part of the IT Leadership Program. Creating content and analyzing engagement metrics.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023 – 2024</span>
+            <h4>Intern</h4>
+            <p>Dr. Priti Kothari's Office, Parkland, FL</p>
+            <p>Assisted with patient paperwork and observed clinical interactions. Wrote blog content for a psychiatry practice.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2022 – 2023</span>
+            <h4>Code Sensei</h4>
+            <p>Code Ninjas, Parkland, FL</p>
+            <p>Taught children coding and problem-solving skills. Guided students through projects and explained computer science concepts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leadership & Activities -->
+      <h3 class="timeline-heading scroll-reveal">Leadership &amp; Activities</h3>
+      <div class="timeline" data-vine>
+        <div class="timeline-plane-wrap"></div>
+
+        <div class="timeline-item right scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">FSU</span>
+            <h4>BRASA Member</h4>
+            <p>Brazilian Student Association, Florida State University</p>
+            <p>Active member planning cultural events and fostering community engagement.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">MSD High School</span>
+            <h4>Editor, Eagle Eye Newspaper</h4>
+            <p>Marjory Stoneman Douglas High School</p>
+            <p>Wrote articles, took photos, and sold ads raising over $1,000. Earned an FSPA honorable mention.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2021 – 2023</span>
+            <h4>Library Volunteer</h4>
+            <p>Parkland Library</p>
+            <p>Organized community events including Black History Month displays and Summer Reading programs.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023</span>
+            <h4>Healthcare Volunteer</h4>
+            <p>Montes Claros, Brazil</p>
+            <p>Volunteered in occupational safety and participated in therapy groups.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Resume -->
   <section id="resume" class="section resume">
     <div class="container">
@@ -96,6 +190,7 @@
       <div class="project-grid">
 
         <div class="project-card scroll-reveal">
+          <img src="kiosk-thumbnail.png" alt="Tally Kommunity Kiosk" class="project-thumbnail">
           <div class="project-info">
             <h3>Tally Kommunity Kiosk</h3>
             <p>An interactive digital kiosk prototype for Tallahassee bus stops, built at the 2026 Create-a-Thon with HTML, CSS, JavaScript, and Leaflet.js. Features a live clock and date via the JavaScript Date API, live weather from Open-Meteo, real Tallahassee events sourced from talgov.com and tallahassee.com, and real nearby places sourced from Google Maps and local business sites. Bus routes are displayed on an OpenStreetMap/Leaflet map, modeled after StarMetro (conceptual, not live GTFS data).</p>
@@ -107,9 +202,9 @@
           </div>
         </div>
 
+        <p class="more-coming scroll-reveal">More to come...</p>
 
       </div>
-      <p class="more-coming scroll-reveal">Coming soon!</p>
     </div>
   </section>
 
