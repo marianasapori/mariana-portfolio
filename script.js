@@ -20,15 +20,13 @@ navLinks.querySelectorAll('a').forEach(link => {
 // Dark / Light mode toggle
 const themeToggle = document.querySelector('.theme-toggle');
 
-// Load saved preference, or default to light
-const savedTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
+// Always start in dark mode
+document.documentElement.setAttribute('data-theme', 'dark');
 
 themeToggle.addEventListener('click', () => {
   const current = document.documentElement.getAttribute('data-theme');
   const next = current === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
 });
 
 // Scroll to top button
@@ -224,6 +222,19 @@ document.addEventListener('mousemove', (e) => {
   leaf.addEventListener('animationend', () => leaf.remove());
 });
 
+
+// ---- Hide leaf cursor over resume iframe ----
+const resumeViewer = document.querySelector('.resume-viewer');
+
+if (resumeViewer) {
+  resumeViewer.addEventListener('mouseenter', () => {
+    leafCursor.style.display = 'none';
+  });
+
+  resumeViewer.addEventListener('mouseleave', () => {
+    leafCursor.style.display = 'block';
+  });
+}
 
 // ---- Particle Bloom Welcome Screen ----
 (function () {

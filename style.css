@@ -508,6 +508,7 @@ a:hover {
 
 /* ---- Resume ---- */
 .resume-viewer {
+  position: relative;
   width: 100%;
   max-width: 800px;
   margin: 0 auto 2rem;
@@ -515,13 +516,16 @@ a:hover {
   overflow: hidden;
   border: 1px solid var(--secondary);
   box-shadow: 0 4px 16px rgba(44, 62, 54, 0.08);
+  cursor: auto !important;
 }
+
 
 .resume-embed {
   width: 100%;
   height: 700px;
   border: none;
   display: block;
+  cursor: auto !important;
 }
 
 .resume-download {
@@ -572,6 +576,21 @@ a:hover {
   opacity: 0.8;
   margin-bottom: 1rem;
   line-height: 1.6;
+}
+
+.more-coming {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--secondary);
+  letter-spacing: 0.5px;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
 .project-link {
