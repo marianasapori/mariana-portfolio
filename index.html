@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mariana Neri Sapori | Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +49,25 @@
         </p>
         <a href="#projects" class="btn">View My Work</a>
       </div>
-      <img src="IMG_6353.jpeg" alt="Mariana Neri Sapori" class="hero-photo">
+      <div class="hero-photo-flip" id="heroPhotoFlip">
+        <span class="hero-photo-hint">click me!</span>
+        <div class="hero-photo-inner">
+          <div class="hero-photo-front">
+            <img src="IMG_6353.jpeg" alt="Mariana Neri Sapori" class="hero-photo">
+          </div>
+          <div class="hero-photo-back">
+            <img src="IMG_6289.jpeg" alt="Mariana with a cat" class="hero-photo">
+            <svg class="curved-text" viewBox="0 0 370 370">
+              <defs>
+                <path id="curvedPath" d="M 185,185 m -170,0 a 170,170 0 1,1 340,0 a 170,170 0 1,1 -340,0" fill="none"/>
+              </defs>
+              <text>
+                <textPath id="curvedTextPath" href="#curvedPath" startOffset="12%"></textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -67,12 +86,15 @@
           <ul class="skill-list">
             <li class="skill-tag">HTML &amp; CSS</li>
             <li class="skill-tag">JavaScript</li>
-            <li class="skill-tag">Python</li>
+            <li class="skill-tag">C++</li>
+            <li class="skill-tag">SQL</li>
+            <li class="skill-tag">Linux</li>
+            <li class="skill-tag">Unix</li>
             <li class="skill-tag">AI Tools</li>
             <li class="skill-tag">Photoshop</li>
             <li class="skill-tag">Microsoft Office</li>
-            <li class="skill-tag">Portuguese</li>
-            <li class="skill-tag">Spanish</li>
+            <li class="skill-tag">Bilingual - Portuguese</li>
+            <li class="skill-tag">Bilingual - Spanish</li>
           </ul>
         </div>
       </div>
@@ -85,9 +107,41 @@
     <div class="container">
       <h2 class="section-title scroll-reveal">Experience</h2>
 
+      <!-- Education -->
+      <h3 class="timeline-heading collapsible scroll-reveal">Education <span class="collapse-icon">&#9662;</span></h3>
+      <div class="timeline collapsible-content" data-vine>
+        <div class="timeline-plane-wrap"></div>
+
+        <div class="timeline-item left scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2024 – 2028</span>
+            <h4>Florida State University</h4>
+            <p>Tallahassee, FL</p>
+            <p>Bachelor's in Information Technology. Active in the IT Leadership Program and Brazilian Student Association (BRASA).</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2020 – 2024</span>
+            <h4>Marjory Stoneman Douglas High School</h4>
+            <p>Parkland, FL</p>
+            <p>Graduated May 2024. AP Scholar. Bright Futures Recipient. 250+ service hours.</p>
+            <ul class="timeline-bullets">
+              <li><strong>Eagle Eye Newspaper, Opinion Editor</strong> — Wrote articles, sold ads, and earned an FSPA honorable mention and a certificate for a published climate change article.</li>
+              <li><strong>AP Language &amp; Composition, TA</strong> — Graded assignments, tutored students, and supported teachers with daily tasks.</li>
+              <li><strong>HandsOnBroward Club, Secretary</strong> — Led community service projects including beach cleanups, school campus beautification, and painting elementary school playgrounds.</li>
+              <li><strong>Womanism Club, Treasurer</strong> — Organized donation drives for feminine products and women's shelters, hosted guest speakers, and planned a Breast Cancer Awareness marathon with all proceeds donated.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- Employment -->
-      <h3 class="timeline-heading scroll-reveal">Employment</h3>
-      <div class="timeline" data-vine>
+      <h3 class="timeline-heading collapsible scroll-reveal">Employment <span class="collapse-icon">&#9662;</span></h3>
+      <div class="timeline collapsible-content" data-vine>
         <div class="timeline-plane-wrap"></div>
 
         <div class="timeline-item left scroll-reveal">
@@ -97,6 +151,31 @@
             <h4>Social Media Marketing Lead</h4>
             <p>Florida State University, Tallahassee, FL</p>
             <p>Leading social media strategy for three university-affiliated Instagram accounts as part of the IT Leadership Program. Creating content and analyzing engagement metrics.</p>
+            <div class="timeline-links">
+              <a href="https://instagram.com/getinvolvedcci_fsu" target="_blank" rel="noopener noreferrer">@getinvolvedcci_fsu</a>
+              <a href="https://instagram.com/alignfsu" target="_blank" rel="noopener noreferrer">@alignfsu</a>
+              <a href="https://instagram.com/noleyourcampus" target="_blank" rel="noopener noreferrer">@noleyourcampus</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item right scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2025</span>
+            <h4>Expo, Server &amp; Busser</h4>
+            <p>Talking Tacos, Tallahassee, FL</p>
+            <p>Managed the expo line for order accuracy and timely delivery, served guests, cleared and reset tables, and kept the front of house running smoothly.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023 – 2024</span>
+            <h4>Buswoman &amp; Waitress</h4>
+            <p>SAISAKI Sushi Restaurant, Coral Springs, FL</p>
+            <p>Greeted and assisted customers, maintained restaurant cleanliness, handled cash register transactions, and helped resolve service questions.</p>
           </div>
         </div>
 
@@ -105,8 +184,54 @@
           <div class="timeline-card">
             <span class="timeline-date">2023 – 2024</span>
             <h4>Intern</h4>
-            <p>Dr. Priti Kothari's Office, Parkland, FL</p>
-            <p>Assisted with patient paperwork and observed clinical interactions. Wrote blog content for a psychiatry practice.</p>
+            <p>Dr. Priti Kothari, Child, Adolescent &amp; Adult Psychiatrist, Boca Raton, FL</p>
+            <p>Supported daily operations at a psychiatry practice by handling patient and reception paperwork. Observed one-on-one patient interactions to gain insight into mental health care, and wrote blog posts for the practice website to help educate and engage patients.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">March – April 2023</span>
+            <h4>Healthcare Intern</h4>
+            <p>Healthcare Municipality of Montes Claros, Brazil</p>
+            <p>Interned in the Occupational Safety and Healthcare Department, participating in therapy group activities to support patient well-being, monitoring developmental progress for mental health cases, and assisting with administrative tasks related to medical research on workers' conditions.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2022 – 2023</span>
+            <h4>Code Sensei</h4>
+            <p>Code Ninjas, Coral Springs, FL</p>
+            <p>Taught children coding and problem-solving skills. Guided students through projects and explained computer science concepts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leadership & Activities -->
+      <h3 class="timeline-heading collapsible scroll-reveal">Leadership &amp; Activities <span class="collapse-icon">&#9662;</span></h3>
+      <div class="timeline collapsible-content" data-vine>
+        <div class="timeline-plane-wrap"></div>
+
+        <div class="timeline-item left scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2025 – Present</span>
+            <h4>CGS at FSU Member</h4>
+            <p>Connecting Girls to STEM, Florida State University</p>
+            <p>Member of a service organization focused on STEM outreach. Visits K-12 schools to host hands-on activities, helps run events that introduce students to science and technology, and participates in workshops including coding and other technical skills.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2024 – Present</span>
+            <h4>BRASA Member</h4>
+            <p>Brazilian Student Association, Florida State University</p>
+            <p>Part of a student-led organization that celebrates Brazilian culture and builds community for Latino students at FSU. Helps coordinate cultural events, manage volunteers, and promote campus engagement across diverse student groups.</p>
           </div>
         </div>
 
@@ -114,35 +239,13 @@
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <span class="timeline-date">2022 – 2023</span>
-            <h4>Code Sensei</h4>
-            <p>Code Ninjas, Parkland, FL</p>
-            <p>Taught children coding and problem-solving skills. Guided students through projects and explained computer science concepts.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Leadership & Activities -->
-      <h3 class="timeline-heading scroll-reveal">Leadership &amp; Activities</h3>
-      <div class="timeline" data-vine>
-        <div class="timeline-plane-wrap"></div>
-
-        <div class="timeline-item right scroll-reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">FSU</span>
-            <h4>BRASA Member</h4>
-            <p>Brazilian Student Association, Florida State University</p>
-            <p>Active member planning cultural events and fostering community engagement.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item left scroll-reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">MSD High School</span>
-            <h4>Editor, Eagle Eye Newspaper</h4>
+            <h4>Opinion Editor, Eagle Eye Newspaper</h4>
             <p>Marjory Stoneman Douglas High School</p>
-            <p>Wrote articles, took photos, and sold ads raising over $1,000. Earned an FSPA honorable mention.</p>
+            <p>Wrote print and online articles, took photos of school events, and sold ads to local businesses raising over $1,000 for quarterly magazines. Managed earnings and fund distribution. Awarded an FSPA honorable mention and certificate for climate change opinion article "Agricultural Practices Unnecessarily Accelerate Climate Change."</p>
+            <div class="timeline-links">
+              <a href="https://eagleeye.news/27303/opinion/opinion-agricultural-practices-unnecessarily-accelerate-climate-change/" target="_blank" rel="noopener noreferrer">Award-Winning Article &rarr;</a>
+              <a href="https://eagleeye.news/staff_name/mariana-neri-sapori/" target="_blank" rel="noopener noreferrer">All My Articles &rarr;</a>
+            </div>
           </div>
         </div>
 
@@ -152,19 +255,10 @@
             <span class="timeline-date">2021 – 2023</span>
             <h4>Library Volunteer</h4>
             <p>Parkland Library</p>
-            <p>Organized community events including Black History Month displays and Summer Reading programs.</p>
+            <p>Shelved books, helped visitors find resources and use computers, and created art projects around the library. Organized events including a Black History Month display featuring Black authors, a Summer Reading registration program, and public informational meetings.</p>
           </div>
         </div>
 
-        <div class="timeline-item left scroll-reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">2023</span>
-            <h4>Healthcare Volunteer</h4>
-            <p>Montes Claros, Brazil</p>
-            <p>Volunteered in occupational safety and participated in therapy groups.</p>
-          </div>
-        </div>
       </div>
 
     </div>
@@ -193,11 +287,23 @@
           <img src="kiosk-thumbnail.png" alt="Tally Kommunity Kiosk" class="project-thumbnail">
           <div class="project-info">
             <h3>Tally Kommunity Kiosk</h3>
+            <p class="project-date">February 27–28, 2026 | 24-Hour Create-a-Thon</p>
             <p>An interactive digital kiosk prototype for Tallahassee bus stops, built at the 2026 Create-a-Thon with HTML, CSS, JavaScript, and Leaflet.js. Features a live clock and date via the JavaScript Date API, live weather from Open-Meteo, real Tallahassee events sourced from talgov.com and tallahassee.com, and real nearby places sourced from Google Maps and local business sites. Bus routes are displayed on an OpenStreetMap/Leaflet map, modeled after StarMetro (conceptual, not live GTFS data).</p>
             <div class="project-links">
               <a href="https://tally-kommunity-kiosk.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">View Prototype &rarr;</a>
               <a href="https://docs.google.com/presentation/d/1GzrRKKCBiYB6XLKjRoGPpgwkVbEMbcxKSnrhnj-tDB0/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link">View Proposal &rarr;</a>
               <a href="https://drive.google.com/file/d/1S7nkSN3aDh2iOAVds5zMtQ1OZnR_iSn_/view" target="_blank" rel="noopener noreferrer" class="project-link">View Press Release, FAQ &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card scroll-reveal">
+          <div class="project-info">
+            <h3>Personal Portfolio Website</h3>
+            <p class="project-date">2026</p>
+            <p>My personal portfolio built from scratch with HTML, CSS, and JavaScript. Features a nature-inspired design with a custom leaf cursor, particle bloom welcome screen, animated timelines, collapsible sections, 3D photo flip card, scroll reveal animations, and dark/light mode — built with the help of Claude Code.</p>
+            <div class="project-links">
+              <a href="https://github.com/marianasapori" target="_blank" rel="noopener noreferrer" class="project-link">View Source &rarr;</a>
             </div>
           </div>
         </div>
@@ -216,7 +322,7 @@
         I'm always open to new opportunities, collaborations, or just a friendly
         chat. Feel free to reach out!
       </p>
-      <a href="mailto:your.email@example.com" class="btn scroll-reveal">Say Hello</a>
+      <a href="mailto:mariananerisapori@gmail.com" class="btn scroll-reveal">Let's Chat!</a>
       <div class="social-links scroll-reveal">
         <!-- Add your social links here -->
         <a href="https://github.com/marianasapori" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">GitHub</a>

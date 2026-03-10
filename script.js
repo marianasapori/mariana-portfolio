@@ -101,20 +101,75 @@ typeWriter(heroGreeting, greetingText, 60, () => {
   cycleTagline();
 });
 
+// ---- Hero Photo Flip ----
+const heroPhotoFlip = document.getElementById('heroPhotoFlip');
+if (heroPhotoFlip) {
+  const curvedTextPath = document.getElementById('curvedTextPath');
+  const curvedMessage = 'I really love cats :)';
+  let curvedTyped = false;
+
+  function typeCurvedText() {
+    if (!curvedTextPath) return;
+    curvedTextPath.textContent = '';
+    let i = 0;
+    setTimeout(() => {
+      function typeCurved() {
+        if (i < curvedMessage.length) {
+          curvedTextPath.textContent += curvedMessage.charAt(i);
+          i++;
+          setTimeout(typeCurved, 70);
+        } else {
+          curvedTyped = true;
+        }
+      }
+      typeCurved();
+    }, 600);
+  }
+
+  const photoHint = heroPhotoFlip.querySelector('.hero-photo-hint');
+  const photoInner = heroPhotoFlip.querySelector('.hero-photo-inner');
+
+  heroPhotoFlip.classList.add('teasing');
+
+  photoInner.addEventListener('mouseenter', () => {
+    if (photoHint) photoHint.style.opacity = '1';
+  });
+  photoInner.addEventListener('mouseleave', () => {
+    if (photoHint) photoHint.style.opacity = '0';
+  });
+
+  heroPhotoFlip.addEventListener('click', () => {
+    heroPhotoFlip.classList.remove('teasing');
+    const isFlipping = !heroPhotoFlip.classList.contains('flipped');
+    heroPhotoFlip.classList.toggle('flipped');
+
+    if (isFlipping && !curvedTyped) {
+      typeCurvedText();
+    }
+  });
+}
+
+// ---- Collapsible Timeline Sections ----
+document.querySelectorAll('.timeline-heading.collapsible').forEach(heading => {
+  heading.addEventListener('click', () => {
+    heading.classList.toggle('collapsed');
+    const content = heading.nextElementSibling;
+    if (content) content.classList.toggle('collapsed');
+  });
+});
+
 // ---- Paper Plane Timeline Animation ----
 document.querySelectorAll('.timeline[data-vine]').forEach(timeline => {
   const wrap = timeline.querySelector('.timeline-plane-wrap');
   if (!wrap) return;
 
-  // Create trail line
   const trail = document.createElement('div');
   trail.classList.add('timeline-trail');
   wrap.appendChild(trail);
 
-  // Create plane (✈ emoji pointing down)
   const plane = document.createElement('div');
   plane.classList.add('timeline-plane');
-  plane.textContent = '✈';
+  plane.textContent = '✦';
   wrap.appendChild(plane);
 
   const items = timeline.querySelectorAll('.timeline-item');
@@ -130,13 +185,9 @@ document.querySelectorAll('.timeline[data-vine]').forEach(timeline => {
     const h = timeline.offsetHeight;
     const planeY = progress * h;
 
-    // Grow trail to plane position
     trail.style.height = planeY + 'px';
-
-    // Position plane at end of trail
     plane.style.top = (planeY - 10) + 'px';
 
-    // Show plane when scrolling through, fade when done
     if (progress > 0 && progress < 1) {
       plane.classList.add('visible');
       plane.classList.remove('faded');
@@ -147,12 +198,11 @@ document.querySelectorAll('.timeline[data-vine]').forEach(timeline => {
       plane.classList.remove('visible', 'faded');
     }
 
-    // Check if plane is near a dot — activate that card
     let nearDot = false;
     items.forEach(item => {
       const dot = item.querySelector('.timeline-dot');
       if (!dot) return;
-      const dotTop = item.offsetTop + dot.offsetTop + 7; // center of dot
+      const dotTop = item.offsetTop + dot.offsetTop + 7;
       const distance = Math.abs(planeY - dotTop);
 
       if (distance < 30) {
@@ -163,7 +213,6 @@ document.querySelectorAll('.timeline[data-vine]').forEach(timeline => {
       }
     });
 
-    // Plane scales up when at a dot
     if (nearDot) {
       plane.classList.add('at-dot');
     } else {
@@ -186,10 +235,10 @@ document.querySelectorAll('.timeline[data-vine]').forEach(timeline => {
 const revealElements = document.querySelectorAll('.scroll-reveal');
 const skillTags = document.querySelectorAll('.skill-tag');
 
-// Stagger skill tags
+// Skill tags flip reveal
 skillTags.forEach((tag, i) => {
-  tag.classList.add('scroll-reveal');
-  tag.style.transitionDelay = `${i * 0.1}s`;
+  tag.classList.add('scroll-reveal', 'flip-reveal');
+  tag.style.transitionDelay = `${i * 0.08}s`;
 });
 
 // Stagger project cards
@@ -201,7 +250,11 @@ const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('revealed');
-      revealObserver.unobserve(entry.target);
+      if (entry.target.classList.contains('flip-reveal')) {
+        revealObserver.unobserve(entry.target);
+      }
+    } else {
+      entry.target.classList.remove('revealed');
     }
   });
 }, { threshold: 0.15, rootMargin: '0px' });
